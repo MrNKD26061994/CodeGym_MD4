@@ -7,14 +7,15 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class CurrencyConversionController {
+
     @GetMapping("/formCurrency")
     public ModelAndView showFormCurrency() {
-        return new ModelAndView("formCurrencyConversion");
+        return new ModelAndView("currencyConversion");
     }
 
     @PostMapping("/currency")
     public ModelAndView showCurrency(String input) {
-        ModelAndView modelAndView = new ModelAndView("formCurrencyConversion");
+        ModelAndView modelAndView = new ModelAndView("currencyConversion");
         modelAndView.addObject("input", input);
         modelAndView.addObject("result", Integer.parseInt(input) * 24000);
         return modelAndView;
