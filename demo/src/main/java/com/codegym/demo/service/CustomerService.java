@@ -3,6 +3,7 @@ package com.codegym.demo.service;
 import com.codegym.demo.dao.CustomerDAO;
 import com.codegym.demo.model.Customer;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class CustomerService {
@@ -23,4 +24,11 @@ public class CustomerService {
         return customerDAO.findById(id);
     }
 
+    public void save(Customer customer) {
+        if(customer.getId() != 0) {
+            customerDAO.update(customer);
+        } else {
+            customerDAO.insert(customer);
+        }
+    }
 }

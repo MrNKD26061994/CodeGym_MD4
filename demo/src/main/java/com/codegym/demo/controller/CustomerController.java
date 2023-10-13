@@ -5,9 +5,11 @@ import com.codegym.demo.service.CustomerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.sql.SQLException;
 import java.util.List;
 
 @Controller
@@ -45,5 +47,17 @@ public class CustomerController {
         Customer customer = customerService.findById(id);
         model.addAttribute("customer", customer);
         return "customers/form";
+    }
+
+    @GetMapping("/register")
+    public String showRegister() {
+        return "customers/form";
+    }
+
+    @PostMapping("/create")
+    public ModelAndView create(Customer customer) throws SQLException {
+        customerService.save(customer);
+        System.out.println(customer.getAddress());
+        return showList();
     }
 }

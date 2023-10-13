@@ -11,17 +11,17 @@
     <title>Title</title>
 </head>
 <body>
-    <form>
+    <form method="post" action="/create">
         <fieldset>
             <legend>Customer Information</legend>
             <table>
                 <tr>
                     <td>ID</td>
-                    <td>${customer.id}</td>
+                    <td><input type="text" name="id" value="${customer.id}" hidden="hiddens"></td>
                 </tr>
                 <tr>
                     <td>Name</td>
-                    <td><input type="text" name="name" value="${customer.name}" </td>
+                    <td><input type="text" name="name" value="${customer.name}"></td>
                 </tr>
                 <tr>
                     <td>Email</td>
@@ -29,7 +29,7 @@
                 </tr>
                 <tr>
                     <td>Address</td>
-                    <td><input type="text" value="${customer.address}"></td>
+                    <td><input type="text" name="address" value="${customer.address}"></td>
                 </tr>
 
                 <tr>
