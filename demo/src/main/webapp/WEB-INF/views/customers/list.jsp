@@ -13,7 +13,7 @@
 </head>
 <body>
 <h1 style="text-align: center;">CustomerList</h1>
-<table>
+<table id="a">
     <tr>
         <th>ID</th>
         <th>Name</th>
@@ -29,8 +29,9 @@
             <td>${customer.address}</td>
         </tr>
     </c:forEach>
-
-
 </table>
+<script>
+    let a = document.getElementById("a");
+</script>
 </body>
 </html>
