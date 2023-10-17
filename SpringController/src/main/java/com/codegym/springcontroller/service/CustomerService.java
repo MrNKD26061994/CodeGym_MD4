@@ -1,21 +1,13 @@
-package com.codegym.demo.service;
+package com.codegym.springcontroller.service;
 
-import com.codegym.demo.dao.CustomerDAO;
-import com.codegym.demo.model.Customer;
+import com.codegym.springcontroller.dao.CustomerDAO;
+import com.codegym.springcontroller.model.Customer;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public class CustomerService implements ICustomerService{
-    static CustomerService customerService;
-
-    public static CustomerService getInstance() {
-        if (customerService == null) {
-            customerService = new CustomerService();
-        }
-        return customerService;
-    }
     private final CustomerDAO customerDAO = new CustomerDAO();
+
     public List<Customer> findAll() {
         return customerDAO.findAll();
     }
