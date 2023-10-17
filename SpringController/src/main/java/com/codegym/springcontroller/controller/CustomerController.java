@@ -1,11 +1,9 @@
 package com.codegym.springcontroller.controller;
 
 import com.codegym.springcontroller.model.Customer;
-import com.codegym.springcontroller.service.CustomerService;
 import com.codegym.springcontroller.service.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -18,7 +16,6 @@ public class CustomerController {
 
     @Autowired
     private ICustomerService customerService;
-
 
 //    C1
 //    @GetMapping("/customers")

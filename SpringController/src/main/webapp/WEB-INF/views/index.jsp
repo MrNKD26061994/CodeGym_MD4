@@ -5,6 +5,7 @@
   Time: 11:02 AM
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -32,5 +33,21 @@
         <option value="Argentina/Buenos_Aires">Buenos Aires</option>
     </select>
 </form>
+
+<form action="sandwich/send" method="post">
+    <input type="checkbox" id="vehicle1" name="condiment" value="Lettuce">
+    <label for="vehicle1">Lettuce</label><br>
+    <input type="checkbox" id="vehicle2" name="condiment" value="Tomato">
+    <label for="vehicle2">Tomato</label><br>
+    <input type="checkbox" id="vehicle3" name="condiment" value="Mustard">
+    <label for="vehicle3">Mustard</label><br>
+    <input type="checkbox" id="vehicle4" name="condiment" value="Sprouts">
+    <label for="vehicle4">Sprouts</label><br>
+
+    <button>Send</button>
+</form>
+<c:forEach items="${condiment}" var="item">
+    <h1>${item}</h1>
+</c:forEach>
 </body>
 </html>
