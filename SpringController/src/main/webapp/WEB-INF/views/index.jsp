@@ -49,5 +49,16 @@
 <c:forEach items="${condiment}" var="item">
     <h1>${item}</h1>
 </c:forEach>
+
+<form action="caculator/calculate" method="post">
+    <input type="text" name="n1">
+    <input type="text" name="n2">
+    <input type="submit" name="operator" value="Add">
+    <input type="submit" name="operator" value="Sub">
+    <input type="submit" name="operator" value="Mul">
+    <input type="submit" name="operator" value="Div">
+</form>
+
+<h1>Result: ${restule}</h1>
 </body>
 </html>
